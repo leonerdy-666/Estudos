@@ -93,3 +93,37 @@ SELECT * FROM v_consulta;
 
 DROP VIEW
 
+-- autocommit
+
+USE litoral
+SELECT * FROM destino;
+
+
+-- configurar o ambiente para que as alterações sejam gravadas automaticamente
+-- controle transacional manual SET AUTOCOMMIT = 0;
+-- controle transacional automatico SET AUTOCOMMIT = 1 ;
+
+SET AUTOCOMMIT = 0;
+
+-- gerar erro
+
+UPDATE destino  SET nome = "Pequena ilha do mar"; -- versão atual não permite atualizar sem where
+
+SELECT * FROM destino
+
+-- criar ponto de restauração
+
+SAVEPOINT ponto1
+
+-- utilizar o ponto de restauração
+
+ROLLBACK TO SAVEPOINT ponto1
+
+-- update novamente
+UPDATE destino  SET nome = "Pequena ilha do mar";
+
+COMMIT;
+
+-- criar novo ponto de restauração
+SAVEPOINT ponto2
+
