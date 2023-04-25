@@ -1,5 +1,0 @@
-package br.com.SistemaLogin.exception;
-
-public class InvalidUserException extends Exception {
-
-}
