@@ -23,4 +23,9 @@
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
+	<section name="EditorSelectionDialog">
+		<item key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION" value=".jar"/>
+		<item key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL" value="true"/>
+		<item key="EditorSelectionDialog.STORE_ID_DESCR" value="Executable Jar File"/>
+	</section>
 </section>

@@ -11,11 +11,18 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\Agenda"/>
+			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Java WEB"/>
+			<item value="C:\Users\leona\Documents\Estudos\Projeto\Ironside"/>
 			<item value="C:\Users\leona\Documents\Estudos"/>
 			<item value="C:\Users\leona\Documents\Estudos\RestPkiSamples-master\Java"/>
 			<item value="C:\Users\leona\Documents\Estudos\Java WEB\Workspace\SistemaLogin"/>
 			<item value="C:\Users\leona\Documents\Estudos\Java WEB\Workspace"/>
 			<item value="C:\Users\leona\Downloads\Nova pasta\Estudos\Java WEB"/>
 		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="652"/>
+		<item key="DIALOG_Y_ORIGIN" value="341"/>
 	</section>
 </section>
