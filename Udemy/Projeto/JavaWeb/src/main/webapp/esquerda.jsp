@@ -23,7 +23,7 @@
 	<p>Clientes</p>
 	<p>Funcionarios</p>
 	<p>
-		<a  href="usuarios.jsp" target="mainframe">Usuarios</a>
+		<a href="usuarios.jsp" target="mainframe">Usuarios</a>
 	</p>
 </body>
 

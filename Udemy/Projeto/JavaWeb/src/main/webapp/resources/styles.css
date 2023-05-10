@@ -22,3 +22,7 @@ td, th, tr {
 	text-align: center;
 	padding: 8px;
 }
+
+th{
+	background: #C0C0C0;
+}

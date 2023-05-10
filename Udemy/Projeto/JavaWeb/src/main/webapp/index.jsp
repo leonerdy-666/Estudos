@@ -17,7 +17,7 @@
 	<FRAME SRC="esquerda.jsp">
 	<FRAMESET ROWS="20%, 80%">
 		<FRAME SRC="topo.jsp">
-		<FRAME SRC="centro.jsp">
+		<FRAME SRC="centro.jsp" name="mainframe">
 	</FRAMESET>
 </FRAMESET>
 </html>
