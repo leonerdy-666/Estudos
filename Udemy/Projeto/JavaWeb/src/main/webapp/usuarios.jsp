@@ -27,7 +27,7 @@
 			<a href="usuarios.jsp?ordenacao=crescente">Crescente</a>
 		</button>
 		<button id="botao2">
-			<a href="usuarios.jsp?ordenacao=decresente">Decrescente</a>
+			<a href="usuarios.jsp?ordenacao=alfabetica">Alfabética</a>
 		</button>
 	</div>
 
@@ -61,9 +61,10 @@
 				rs = st.executeQuery("select * from login");
 
 			} else if (request.getParameter("ordenacao").equals("crescente")) {
+				rs = st.executeQuery("select * from login order by log_codigo");
+				
+			} else if (request.getParameter("ordenacao").equals("alfabetica")) {
 				rs = st.executeQuery("select * from login order by log_usuario");
-			} else if (request.getParameter("ordenacao").equals("decresente")) {
-				rs = st.executeQuery("select * from login order by log_usuario desc");
 			}
 
 			while (rs.next()) {

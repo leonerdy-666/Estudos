@@ -13,9 +13,9 @@
 <head>
 <title>HTML Frames</title>
 </head>
-<FRAMESET COLS="20%, *">
+<FRAMESET COLS="10%, *">
 	<FRAME SRC="esquerda.jsp">
-	<FRAMESET ROWS="20%, 80%">
+	<FRAMESET ROWS="15%, 80%">
 		<FRAME SRC="topo.jsp">
 		<FRAME SRC="centro.jsp" name="mainframe">
 	</FRAMESET>

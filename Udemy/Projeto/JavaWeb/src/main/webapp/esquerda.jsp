@@ -15,16 +15,18 @@
 </head>
 
 <body style="background: #99FF99";>
-	<h1 align="center">Menus</h1>
-	<p>Bairros</p>
-	<p>Cidades</p>
-	<p>Endereços</p>
-	<p>Cargos</p>
-	<p>Clientes</p>
-	<p>Funcionarios</p>
-	<p>
-		<a href="usuarios.jsp" target="mainframe">Usuarios</a>
-	</p>
+	<div>
+		<h1 align="center">Menus</h1>
+		<p>Bairros</p>
+		<p>Cidades</p>
+		<p>Endereços</p>
+		<p>Cargos</p>
+		<p>Clientes</p>
+		<p>Funcionarios</p>
+		<p>
+			<a href="usuarios.jsp" target="mainframe">Usuarios</a>
+		</p>
+	</div>
 </body>
 
 </html>
