@@ -1,5 +1,0 @@
-INDEX VERSION 1.132+C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\.metadata\.plugins\org.eclipse.jdt.core
-128038950.index
-1865797976.index
-1672867202.index
-3486009411.index
