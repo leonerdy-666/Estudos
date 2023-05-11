@@ -16,7 +16,7 @@
 <body>
 
 	<%
-	try { 
+	try {
 		//carregar o driver
 		Class.forName("com.mysql.cj.jdbc.Driver");
 

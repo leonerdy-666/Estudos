@@ -12,7 +12,7 @@
 <head>
 <link rel="stylesheet" href="resources/styles.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Manutenção de Usuarios</title>
 </head>
 <body>
 
@@ -20,7 +20,9 @@
 	<h1 align="center">Manutenção de Usuarios</h1>
 
 	<div id="cadastro" align="center">
-		<img src="imagens/cadastro.png">
+		<a href="cadastro.jsp" target="mainframe"><img
+			src="imagens/cadastro.png"></a>
+
 	</div>
 	<div align="left">
 		<button id="botao1">
@@ -31,14 +33,14 @@
 		</button>
 	</div>
 
-	<table id="cadastros" cellpadding="5">
-		<tr align="center">
-			<th>Código</th>
-			<th>Nome</th>
-			<th>Senha</th>
-			<th>Nivel de Acesso</th>
-			<th>Alterar</th>
-			<th>Excluir</th>
+	<table id="login" cellpadding="5">
+		<tr class="cadastros" align="center">
+			<th class="cadastros">Código</th>
+			<th class="cadastros">Nome</th>
+			<th class="cadastros">Senha</th>
+			<th class="cadastros">Nivel de Acesso</th>
+			<th class="cadastros">Alterar</th>
+			<th class="cadastros">Excluir</th>
 		</tr>
 
 		<%
@@ -62,7 +64,7 @@
 
 			} else if (request.getParameter("ordenacao").equals("crescente")) {
 				rs = st.executeQuery("select * from login order by log_codigo");
-				
+
 			} else if (request.getParameter("ordenacao").equals("alfabetica")) {
 				rs = st.executeQuery("select * from login order by log_usuario");
 			}
@@ -70,12 +72,12 @@
 			while (rs.next()) {
 		%>
 		<tr align="center">
-			<td><%=rs.getString("log_codigo")%></td>
-			<td><%=rs.getString("log_usuario")%></td>
-			<td><%=rs.getString("log_senha")%></td>
-			<td><%=rs.getString("log_nivelacesso")%></td>
-			<td><img id="imagem1" src="imagens/alter.png"></td>
-			<td><a
+			<td class="cadastros"><%=rs.getString("log_codigo")%></td>
+			<td class="cadastros"><%=rs.getString("log_usuario")%></td>
+			<td class="cadastros"><%=rs.getString("log_senha")%></td>
+			<td class="cadastros"><%=rs.getString("log_nivelacesso")%></td>
+			<td class="cadastros"><img id="imagem1" src="imagens/alter.png"></td>
+			<td class="cadastros"><a
 				href="usuarios.jsp?acao=excluir&amp;codigo=<%=rs.getString("log_codigo")%>"><img
 					id="imagem1" src="imagens/delete.png"></a></td>
 		</tr>

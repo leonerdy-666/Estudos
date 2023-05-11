@@ -12,7 +12,7 @@
 <head>
 <link rel="stylesheet" href="resources/styles.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Manutenção de Usuarios</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 	<h1 align="center">Manutenção de Usuarios</h1>
 
 	<div id="cadastro" align="center">
-		<a href="Cadastro.jsp" target="mainframe"><img
+		<a href="cadastro.jsp" target="mainframe"><img
 			src="imagens/cadastro.png"></a>
 
 	</div>
