@@ -33,6 +33,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\MCL_Automação"/>
 			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\Servers"/>
 			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\JavaWeb"/>
 			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\Servers"/>
