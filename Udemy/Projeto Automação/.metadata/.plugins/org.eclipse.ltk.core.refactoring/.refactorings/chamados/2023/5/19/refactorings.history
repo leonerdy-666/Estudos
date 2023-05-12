@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;utils.DriverManager&apos; to &apos;GerenciamentoDriver&apos;&#x0D;&#x0A;- Original project: &apos;chamados&apos;&#x0D;&#x0A;- Original element: &apos;utils.DriverManager&apos;&#x0D;&#x0A;- Renamed element: &apos;utils.GerenciamentoDriver&apos;&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DriverManager&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;utils{DriverManager.java[DriverManager" matchStrategy="1" name="GerenciamentoDriver" qualified="false" references="false" similarDeclarations="false" stamp="1683914353231" textual="false" version="1.0"/>
+</session>

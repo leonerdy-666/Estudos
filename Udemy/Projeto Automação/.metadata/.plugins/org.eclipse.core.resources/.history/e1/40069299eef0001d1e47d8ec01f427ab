@@ -1,0 +1,16 @@
+package TestCases;
+
+import java.sql.DriverManager;
+
+import org.openqa.selenium.WebDriver;
+
+public class chamados {
+	
+	private WebDriver driver;
+	DriverManager driverManager;
+
+	public void setup() {
+		
+	}
+	
+}

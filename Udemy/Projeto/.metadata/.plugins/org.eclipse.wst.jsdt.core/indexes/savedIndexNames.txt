@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1118817766.index
-1204612520.index
-2906053840.index
-2892319514.index
-3040455524.index
-1014811925.index
