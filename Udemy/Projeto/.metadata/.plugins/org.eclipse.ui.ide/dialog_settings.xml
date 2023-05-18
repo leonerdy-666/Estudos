@@ -1,47 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-		</list>
-	</section>
 	<section name="SmartImportWizard">
 		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\JavaWeb"/>
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\Agenda"/>
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Java WEB"/>
-			<item value="C:\Users\leona\Documents\Estudos\Projeto\Ironside"/>
-			<item value="C:\Users\leona\Documents\Estudos"/>
-			<item value="C:\Users\leona\Documents\Estudos\RestPkiSamples-master\Java"/>
-			<item value="C:\Users\leona\Documents\Estudos\Java WEB\Workspace\SistemaLogin"/>
-			<item value="C:\Users\leona\Documents\Estudos\Java WEB\Workspace"/>
-			<item value="C:\Users\leona\Downloads\Nova pasta\Estudos\Java WEB"/>
+			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto Automação"/>
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="652"/>
 		<item key="DIALOG_Y_ORIGIN" value="341"/>
 	</section>
-	<section name="ExternalProjectImportWizard">
-		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
-		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\MCL_Automação"/>
-			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\MCL_Automação"/>
-			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\Servers"/>
-			<item value="C:\Users\lmendefl\OneDrive - everis\Documentos\Leonardo\Estudos\Udemy\Projeto\JavaWeb"/>
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\Servers"/>
-			<item value="C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\JavaWeb"/>
-		</list>
-		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value=""/>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 </section>
