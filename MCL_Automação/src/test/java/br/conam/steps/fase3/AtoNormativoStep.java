@@ -186,3 +186,4 @@ public class AtoNormativoStep extends Base {
 	    this.VerificaMensagemSucesso(mensagemSucessoExclusão, mensagem);
 	}
 }
+

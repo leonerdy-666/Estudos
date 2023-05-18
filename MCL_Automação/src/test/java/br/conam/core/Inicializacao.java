@@ -9,7 +9,7 @@ public class Inicializacao extends Base {
 	
 	private static String senha =  "conam";
 	private static String login = "conam";
-	private static String endereco = "http://automacao.mitc.conam.com.br:86/mitc/pages/ajuste_licitacao/ajuste_licitacao_editar.xhtml?windowId=8ee";
+	private static String endereco = "https://youtube.com.br";
 	
 	
 	public Inicializacao() throws Exception {

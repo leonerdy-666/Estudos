@@ -12,10 +12,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/",
+		features = "src/test/resources/1_INCLUSÃO_PARTICULAR_GERAL/1_Fase3-AtosdePessoal",
 		glue = "br.conam.steps",
 		monochrome = true,
-		tags = "@ExclusãoAlteracaoAposentadopensionista",
+		tags = "@InclusãoGeral",
 	    plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-reports","json:target/reports/CucumberReport.json"}, //"de.monochromata.cucumber.report.PrettyReports:target/pretty-cucumber"},
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
