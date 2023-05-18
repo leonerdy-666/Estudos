@@ -1,0 +1,8 @@
+Feature: Aprender cucumber
+Como um aluno
+Eu quero aprendes a utilizar cucumber
+para que eu possa automatizar critérios de aceitação
+
+@Dado que criei o arquivo corretamente
+@Quando executa-lo
+@Então a especificação deve finalizar com sucesso

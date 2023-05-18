@@ -10,7 +10,7 @@ public class DriverFactory {
 	public static WebDriver getDriver() {
 		if(driver == null) {
 			driver = new ChromeDriver();
-			driver.manage().window().setSize(new Dimension(1920, 1080));
+			driver.manage().window().setSize(new Dimension(1200, 765));
 		}
 		return driver;
 	}

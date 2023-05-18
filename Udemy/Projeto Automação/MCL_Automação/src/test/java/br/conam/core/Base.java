@@ -40,7 +40,7 @@ public class Base {
 	/*************************   MÉTODOS INICIAIS  ****************************************/
 	
 	public void acessarEndereco(String endereco) {
-		getDriver().get(endereco);
+		driver.get(endereco);
 	}
 	public void fecharBrowser() {
 		getDriver().close();
