@@ -1,5 +1,0 @@
-package br.com.SistemaLogion.exception;
-
-public class InvalidUserException extends servletException {
-	
-}
