@@ -1,1 +1,0 @@
-INDEX VERSION 1.132+C:\Users\leona\Documents\Leonardo Backup\Estudos\Udemy\Projeto\.metadata\.plugins\org.eclipse.jdt.core
