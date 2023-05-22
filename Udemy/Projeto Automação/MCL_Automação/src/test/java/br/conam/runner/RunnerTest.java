@@ -15,7 +15,6 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/resources/",
 		glue = "br.conam.steps",
 		monochrome = true,
-		tags = "@ExclusãoAposentadoPensionista",
 	    plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-reports","json:target/reports/CucumberReport.json"}, //"de.monochromata.cucumber.report.PrettyReports:target/pretty-cucumber"},
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
