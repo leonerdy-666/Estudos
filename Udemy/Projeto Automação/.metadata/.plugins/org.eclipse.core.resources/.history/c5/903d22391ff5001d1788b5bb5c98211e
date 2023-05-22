@@ -1,0 +1,522 @@
+package br.conam.core;
+
+import static br.conam.core.DriverFactory.getDriver;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.SystemClock;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+/*SUMÁRIO:
+	-MÉTODOS INICIAIS
+	-MÉTODOS PRINCIPAIS
+	-MÉTODOS COMBOBOX
+	-MÉTODOS CALENÁRIO/DATA
+	-MÉTODOS POPUP
+	-MÉTODOS POPUP_IC
+*/
+//NOELEN
+public class Base {
+	SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+	Date data = new Date();
+	String data_atual = formatador.format(data);
+	protected WebElement element;
+	protected WebDriverWait wait = new WebDriverWait(getDriver(),30);
+	protected static By strMensagemExibida = By.id("");
+	protected WebDriver driver;
+	private static String name = System.getProperty("user.name");
+	private static String localLogPrint = "/home/" + name + "/log_robo/"; 
+	//private static String localLogPrint = "C:/Users/" + name + "/log_robo_novo";
+	protected WebElement fileInput;
+	
+	/*************************   MÉTODOS INICIAIS  ****************************************/
+	
+	public void acessarEndereco(String endereco) {
+		getDriver().get(endereco);
+	}
+	public void fecharBrowser() {
+		getDriver().close();
+	}
+	
+	public WebElement acharElemento(By by) {
+		return getDriver().findElement(by);
+	}
+	
+	public void limparCampo(By by) {
+		getDriver().findElement(by).clear();
+	}
+	
+	public  String obterTexto(By by) {
+		return getDriver().findElement(by).getText();
+	}
+	
+	public void descerPagina() {
+		WebElement element = getDriver().findElement(By.id("menu_principal"));
+		element.sendKeys(Keys.END);
+	}
+	
+	//verificar se a mensagem de sucesso apareceu e “marcar” o cenário como “Success” ou “Fail”.
+//	public boolean verificarMensagemSucesso(By by, String mensagemEsperada) {
+//		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+//		String strMensagemExibida = obterTexto(by);
+//		if(strMensagemExibida.contains(mensagemEsperada)) {
+//			return true;
+//		}else {
+//			return false;
+//		}
+//	}
+	
+	/*public  void validacaoScreenshot(Scenario cenario) throws IOException {
+		if(cenario.isFailed()) {
+			//cenario.embed(ConfigScreenshot.takeScreenShotAsByte(DriverFactory.getDriver()), "image/png");
+			//cenario.write("Step falhou!!!!");
+		}else {
+			//cenario.write("Step passou!!!!");
+		}
+	}*/
+	
+	public static void waitBase(int intSegundo) {
+		try {
+			synchronized (getDriver()) {
+				getDriver().wait(intSegundo * 1000);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/************************** MÉTODOS PRINCIPAIS *********************************************/
+	/*public void chamaCaminho(String menu, String subMenu, String subMenu2, String subMenu3) throws Exception {
+		if(subMenu2 != "" && subMenu3 == "") {
+			try {
+				getDriver().findElement(By.id(menu)).click();
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(subMenu)));
+				getDriver().findElement(By.id(subMenu)).click();
+				getDriver().findElement(By.id(subMenu2)).click();
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else if(subMenu2 == "" && subMenu3 == "") {
+			try {
+				getDriver().findElement(By.id(menu)).click();
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(subMenu)));
+				getDriver().findElement(By.id(subMenu)).click();
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else {
+			try {
+				getDriver().findElement(By.id(menu)).click();
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(subMenu)));
+				getDriver().findElement(By.id(subMenu)).click();
+				getDriver().findElement(By.id(subMenu2)).click();
+				getDriver().findElement(By.id(subMenu3)).click();
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}
+	}*/
+	//Usar quando o chama caminho de cima não funcionar ou necessitar de usar outros tipos de locators para os menus
+	public void chamaCaminho5pDefinindoTipoLocator(By menu, By subMenu, By subMenu2, By subMenu3, By subMenu4) throws Exception {
+		if(subMenu2 == null && subMenu3 == null && subMenu4 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else if(subMenu3 == null && subMenu4 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+				clicar(subMenu2);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else if(subMenu3 != null && subMenu4 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+				clicar(subMenu2);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu3));
+				clicar(subMenu3);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			}
+		}else if(subMenu3 != null && subMenu4 != null){
+			wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+			clicar(menu);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+			clicar(subMenu);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+			clicar(subMenu2);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu3));
+			clicar(subMenu3);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu4));
+			clicar(subMenu4);
+		}else{
+			System.out.println("Não há parâmetros o suficiente para acessar uma tela");
+		}
+	}
+	
+	/*// locator para 6 chama caminho ------Marcio
+	
+	public void chamaCaminho6pDefinindoTipoLocator(By menu, By subMenu, By subMenu2, By subMenu3, By subMenu4, By subMenu5) throws Exception {
+		if(subMenu2 == null && subMenu3 == null && subMenu4 == null && subMenu5 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else if(subMenu3 == null && subMenu4 == null && subMenu5 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+				clicar(subMenu2);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			} 
+		}else if(subMenu3 != null && subMenu4 == null && subMenu5 == null) {
+			try {
+				wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+				clicar(menu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+				clicar(subMenu);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+				clicar(subMenu2);
+				wait.until(ExpectedConditions.presenceOfElementLocated(subMenu3));
+				clicar(subMenu3);
+			}catch(Exception e){
+				throw new Exception("Não foi possível encontrar o caminho até a tela");
+			}
+		}else if(subMenu3 != null && subMenu4 != null && subMenu5 != null){
+			wait.until(ExpectedConditions.presenceOfElementLocated(menu));
+			clicar(menu);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu));
+			clicar(subMenu);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu2));
+			clicar(subMenu2);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu3));
+			clicar(subMenu3);
+			wait.until(ExpectedConditions.presenceOfElementLocated(subMenu4));
+			clicar(subMenu4);
+		}else{
+			System.out.println("Não há parâmetros o suficiente para acessar uma tela");
+		}
+	}*/
+	
+	public void clicar(By by) throws Exception{
+		try {
+			getDriver().findElement(by).click();
+		}catch(Exception e){
+			throw new Exception("Não foi possível localizar/clicar no elemento");
+		}
+	}
+	
+	public void escrever(By by, String texto) throws Exception{
+		try {waitBase(1);
+			getDriver().findElement(by).clear();
+			waitBase(1);
+			getDriver().findElement(by).sendKeys(texto);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível escrever no campo e/ou localiza-lo " + by.toString() + texto + " :: " +  getDriver().getTitle() + " :: " + e.getMessage() + e.getLocalizedMessage());
+		}
+	}
+	
+	public void escreverSemTryCatch(By by, String texto) {
+		getDriver().findElement(by).clear();
+		getDriver().findElement(by).sendKeys(texto);
+	}
+		
+	public void confirma() throws Exception {
+		try {
+			clicar(By.xpath("//input[@value='Entrar']"));
+		}catch(Exception e){
+			throw new Exception("Não foi possível clicar no botão confirmar");
+		}
+		
+	}
+	
+	public void upload(By botaoNome, String arquivo)throws Exception {
+		//getDriver().findElement(botaoNome).click();
+        WebElement fileInput = getDriver().findElement(botaoNome);
+        waitBase(1);
+        fileInput.sendKeys(System.getProperty("user.dir") + File.separator +"files"+ File.separator+ arquivo);
+	}
+	
+	
+	/*********************************** popUp ************************************************/
+	
+	public void abrePopUp(By painel) throws Exception {
+		try {
+			getDriver().findElement(painel);
+			getDriver().switchTo().window((String)getDriver().getWindowHandles().toArray()[1]);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível localizar o popUp");
+		}
+	}
+
+	public void fechaPopUp(By by) throws Exception {
+		try {
+			getDriver().findElement(by).click();
+			getDriver().switchTo().window((String)getDriver().getWindowHandles().toArray()[0]);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível fechar o popup");
+		}
+	}
+	
+	
+	/**************************** Meus Metódos *****************************/
+	
+	public void acessoGeral (By acessoaosubmenu) throws Exception {
+		try {
+		wait.until(ExpectedConditions.presenceOfElementLocated(acessoaosubmenu));
+		this.clicar(acessoaosubmenu);
+		waitBase(2);
+		} catch (Exception e){
+			throw new Exception("Não foi possível achar o submenu");
+		}
+		
+	}
+	
+	public void escreverId( By campo, String texto, By item) throws Exception{
+		try {
+			getDriver().findElement(campo).clear();
+			getDriver().findElement(campo).sendKeys(texto);
+			waitBase(2);
+			DriverFactory.getDriver().findElement(item).click();
+		}catch(Exception e) {
+				throw new Exception("não foi possível clicar no item");
+		}
+	}
+	
+	
+	public void selecionaComboId (By selecaocomboid, By itemcomboid) throws Exception {
+		this.clicar(selecaocomboid);
+		waitBase(1);
+		try {
+			DriverFactory.getDriver().findElement(selecaocomboid);
+		}catch(Exception e) {
+			throw new Exception("Não consegui clicar no combobox");
+		} try {
+			DriverFactory.getDriver().findElement(itemcomboid).click();
+		} catch (Exception e) {
+			throw new Exception("Não consegui selecionar o item");
+		}
+	}
+	
+	public void selecionaComboBox(By selecao, By item) throws Exception {
+		try {
+			this.clicar(selecao);
+			waitBase(1);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível selecionar o seu comboBox :(");
+		} try {
+			this.clicar(item);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível selecionar o item :(");
+		}
+	}
+	
+	public void diadeExclusão(By botaoExcluir, By botaoConfirma) throws Exception {
+		try {
+			waitBase(2);
+			this.clicar(botaoExcluir);
+		} catch (Exception e) {
+			throw new Exception("não foi possível clicar no botão excluir");
+		} try {
+			waitBase(2);
+			this.clicar(botaoConfirma);
+		} catch (Exception e) {
+			throw new Exception("Não foi possível clicar no botão confirmar");
+		}
+	}
+	
+	public void triadeExclusão(By buscar, By excluir, By confirmar) throws Exception {
+		try {
+			waitBase(1);
+			this.clicar(buscar);
+			waitBase(1);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível clica no botão buscar");
+		} try {
+			this.clicar(excluir);
+			waitBase(1);
+		} catch (Exception e) {
+			throw new Exception("Não foi possível clicar no botão exclusão");
+		} try {
+			this.clicar(confirmar);
+		} catch (Exception e) {
+			throw new Exception("Não foi possível clicar no botão confirmar");
+		}
+	}
+	
+	public void acessaAlteração(By botaobuscar, By botaoalterar) throws Exception {
+		try {
+			this.clicar(botaobuscar);
+			waitBase(2);
+		} catch (Exception e) {
+			throw new Exception("não foi possível clicar no buscar");
+		} try {
+			this.clicar(botaoalterar);
+		} catch (Exception e) {
+			throw new Exception("Não foi possível selecionar o botão alterar");
+		}
+	}
+	
+	public void CampoData(By selecaoData, By itemData) throws Exception {
+		try {
+			this.clicar(selecaoData);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível selecionar a data :(");
+		} try {
+			this.clicar(itemData);
+		} catch (Exception e) {
+			throw new Exception("Não foi possível selecionar a data");
+		}
+	}
+	
+	public void VerificaMensagemSucesso(By MensagemSucesso, String mensagem) throws Exception {
+		try {
+			String mensagemExibida = obterTexto(MensagemSucesso);
+			mensagemExibida.contains(mensagem);
+		} catch (Exception e) {
+			By mensagemErro = By.id("j_idt46:mensagemErro");
+			throw new Exception((obterTexto(mensagemErro)));
+		}
+	}
+	
+	public void VerificaMensagemPopUp (By botaoSalvar) throws Exception {
+		try {
+			waitBase(2);
+			this.clicar(botaoSalvar);
+		} catch (Exception e) {
+			By mensagemErro = By.id("j_idt46:mensagemErro");
+			throw new Exception(obterTexto(mensagemErro));
+		}
+	}
+	
+	public void VerificaProximaAba(By botaoProximo, By aba) throws Exception {
+		waitBase(2);
+		this.clicar(botaoProximo);
+		waitBase(1);
+		try {
+			By mensagemSucessoAba = By.id("j_idt46:mensagemSucesso_container");
+			getDriver().findElement(mensagemSucessoAba);
+			this.clicar(aba);
+		} catch (Exception e) {
+			By mensagemErro = By.id("j_idt46:mensagemErro");
+			throw new Exception(obterTexto(mensagemErro));
+		}
+	}
+	
+	/*********************** metodos mortos ***********************/ 
+
+	/*public void selecionaComboBox (By campocomboBox, By campopainel, By comboBoxItem) throws Exception {
+		this.clicar(campocomboBox);
+		waitBase(3);
+		try {
+			DriverFactory.getDriver().findElement(campopainel).click();
+			DriverFactory.getDriver().findElement(comboBoxItem).click();
+		}catch(Exception e) {
+			throw new Exception("Não encontrei o item :(");
+		}
+	}*/
+	
+	/*public void selecionaOpcaoComboBoxPorTexto(By by, String text) throws Exception{
+		try {
+			element = getDriver().findElement(by);
+		}catch(Exception e){
+			throw new Exception("Não foi possível localizar o comboBox");
+		}
+		try {
+			Select combo;
+			combo = new Select(element);
+			combo.selectByVisibleText(text);
+		}catch(Exception e){
+			throw new Exception("Não foi possível selecionar o elemento localizado no comboBox");
+		}
+	}*/
+	
+	/*public void selecionaOpcaoComboBoxPorIndex(By comboLocator, int index) throws Exception {
+		try {
+			this.clicar(comboLocator);
+			element = getDriver().findElement(comboLocator);
+		}catch(Exception e){
+			throw new Exception("Não foi possível localizar o comboBox");
+		}
+		try {
+			Select combo;
+			combo = new Select(element);
+			combo.selectByIndex(index);
+		}catch(Exception e){
+			throw new Exception("Não foi possível selecionar o elemento localizado no comboBox");
+		}
+	}*/
+	
+	
+	/********************************* MÉTODOS CALENDÁRIO/DATA  ************************************/
+	
+	
+	
+	
+	public String getDataAtual() {
+		return data_atual;
+	}
+	
+	/*public void dataHoje(By campoDataInscricao) throws Exception {
+		try {
+			data = new Date();
+			escrever(campoDataInscricao ,data_atual );
+		}catch(Exception e) {
+			throw new Exception("Não foi possível localizar o campo 'data' e/ou inserir a data do dia atual");
+		}
+	}*/
+	public void inserirQualquerData(By campoData, String data) throws Exception {
+		try {
+			getDriver().findElement(campoData).clear();
+			getDriver().findElement(campoData).click();
+			getDriver().findElement(campoData).sendKeys(data);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível localizar o campo 'data' e/ou inserir a data do dia atual");
+		}
+	}
+	
+	
+	public void inserirDataAtual(By campoData) throws Exception {
+		try {
+			SimpleDateFormat formatador = new SimpleDateFormat ("dd/MM/yyyy hh:MM:ss");
+			data = new Date();
+			String dataformatada = formatador.format(data);
+			getDriver().findElement(campoData).clear();
+			getDriver().findElement(campoData).click();
+			getDriver().findElement(campoData).sendKeys(dataformatada);
+		}catch(Exception e) {
+			throw new Exception("Não foi possível localizar o campo 'data' e/ou inserir a data do dia atual");
+		}
+	}
+
+
+}

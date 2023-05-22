@@ -1,0 +1,8 @@
+import java.util.Date;
+
+import cucumber.api.*;
+
+
+public class DateConverter extends Transformer<Date>{	
+
+}

@@ -1,0 +1,16 @@
+import java.util.Date;
+
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.AbstractTypeResolver;
+
+
+public class DateConverter extends {
+
+	@Override
+	public Date transform(String value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+}

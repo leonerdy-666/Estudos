@@ -1,0 +1,28 @@
+package br.conam.core;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Sleeper;
+
+public class Inicializacao extends Base {
+	
+	private static String senha =  "conam";
+	private static String login = "conam";
+	private static String endereco = "www.youtube.com";
+	
+	
+	public Inicializacao() throws Exception {
+		this.login();
+	}
+
+	protected void login() throws Exception {
+		waitBase(2);
+		this.acessarEndereco(endereco);
+		waitBase(2);
+		this.escrever(By.id("loginForm:j_username"),login);
+		this.escrever(By.id("loginForm:j_password"), senha);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Entrar")));
+		this.clicar(By.linkText("Entrar"));
+	}
+}

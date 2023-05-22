@@ -1,0 +1,17 @@
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.util.NameTransformer;
+
+public class DateConverter extends NameTransformer{
+
+	@Override
+	public String reverse(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String transform(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}	
+
+}
