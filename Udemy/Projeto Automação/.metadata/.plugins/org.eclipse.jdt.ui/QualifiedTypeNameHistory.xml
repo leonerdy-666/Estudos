@@ -23,14 +23,11 @@
     <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.lang.Throwable"/>
-    <fullyQualifiedTypeName name="javax.xml.transform.sax.SAXTransformerFactory"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="javax.xml.transform.Transformer"/>
     <fullyQualifiedTypeName name="io.cucumber.core.internal.com.fasterxml.jackson.databind.util.NameTransformer"/>
     <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
     <fullyQualifiedTypeName name="cucumber.api.CucumberOptions"/>
-    <fullyQualifiedTypeName name="cucumber.api.java.es.Dado"/>
-    <fullyQualifiedTypeName name="cucumber.api.java.it.Quando"/>
     <fullyQualifiedTypeName name="cucumber.api.Transformer"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="io.cucumber.junit.CucumberOptions.SnippetType"/>
@@ -40,4 +37,9 @@
     <fullyQualifiedTypeName name="io.cucumber.core.internal.com.fasterxml.jackson.databind.AbstractTypeResolver"/>
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="AprenderCucumber"/>
+    <fullyQualifiedTypeName name="cucumber.api.cli.Main"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.es.Dado"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.it.Quando"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.sax.SAXTransformerFactory"/>
 </qualifiedTypeNameHistroy>

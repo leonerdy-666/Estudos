@@ -1,6 +1,0 @@
-import org.junit.runner.RunWith;
-
-@RunWith(cucumber.class)
-public class Runner {
-
-}

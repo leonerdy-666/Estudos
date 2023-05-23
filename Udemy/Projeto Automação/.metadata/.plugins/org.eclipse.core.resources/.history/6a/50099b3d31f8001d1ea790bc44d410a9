@@ -1,8 +1,0 @@
-import java.util.Date;
-
-import io.cucumber.core.internal.com.fasterxml.jackson.databind.util.NameTransformer;
-
-
-public class DateConverter extends NameTransformer<Date>{	
-
-}
