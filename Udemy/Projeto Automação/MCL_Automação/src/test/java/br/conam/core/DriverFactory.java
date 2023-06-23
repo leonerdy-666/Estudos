@@ -1,6 +1,7 @@
 package br.conam.core;
 
-import org.openqa.selenium.Dimension;
+import java.awt.Dimension;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
